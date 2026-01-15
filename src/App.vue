@@ -17,9 +17,11 @@ import TheWelcome from './components/TheWelcome.vue'
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+  $red: red;
 header {
   line-height: 1.5;
+  background-color: $red;
 }
 
 .logo {
