@@ -5,4 +5,5 @@
 </template>
 
 <style lang="scss" scoped>
+  @use "./assets/scss/reset" as *;
 </style>
