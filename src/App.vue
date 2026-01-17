@@ -1,9 +1,10 @@
-<script setup></script>
-
+<script setup>
+  import MainSite from './components/MainSite.vue';
+</script>
 <template>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <MainSite />
 </template>
 
-<style lang="scss" scoped>
-  @use "./assets/scss/reset" as *;
+<style lang="scss">
+@use './assets/scss/reset.scss' as *;
 </style>
