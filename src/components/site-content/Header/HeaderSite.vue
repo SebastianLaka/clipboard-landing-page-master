@@ -1,5 +1,5 @@
 <script setup>
-import logo from '../icons/logo.svg'
+import logo from '../../icons/logo.svg'
 const imageSlotProps = {
   img: logo,
   alt: 'Header logo for site',
@@ -19,9 +19,9 @@ const imageSlotProps = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 3em 1em 0 1em;
     gap: 2em 0;
-    background-image: url(../../assets/images/bg-header-mobile.png);
+    background-image: url(../../../assets/images/bg-header-mobile.png);
     background-repeat: no-repeat;
     background-position: right top;
   }
@@ -31,7 +31,7 @@ const imageSlotProps = {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    background-image: url(../../assets/images/bg-header-desktop.png);
+    background-image: url(../../../assets/images/bg-header-desktop.png);
   }
 }
 @media (min-width: 992px) {

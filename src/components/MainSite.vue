@@ -1,5 +1,5 @@
 <script setup>
-import HeaderSite from './site-content/HeaderSite.vue'
+import HeaderSite from './site-content/Header/HeaderSite.vue'
 import SiteButton from './site-content/SiteButton.vue'
 </script>
 <template>
