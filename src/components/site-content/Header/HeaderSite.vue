@@ -1,13 +1,13 @@
 <script setup>
 import logo from '../../icons/logo.svg'
-const imageSlotProps = {
+const headerLogo = {
   img: logo,
   alt: 'Header logo for site',
 }
 </script>
 <template>
   <header class="header-site">
-    <slot name="header-logo" v-bind="imageSlotProps" />
+    <slot name="header-logo" v-bind="headerLogo" />
     <slot name="header-content" />
     <slot name="header-actions" />
   </header>

@@ -1,9 +1,15 @@
-<script setup></script>
+<script setup>
+  import SnipetImage from "../../../assets/images/image-computer.png"
+  const snipetImage = {
+  img: SnipetImage,
+  alt: 'Snipet computer image',
+}
+</script>
 <template>
   <section class="site-snipets">
     <slot name="snipets-header" />
-    <slot name="snipets-image" />
-    <slot name="snipets-features" />
+    <slot name="snipets-image" v-bind="snipetImage" />
+    <slot name="snipet-feature" />
   </section>
 </template>
 <style lang="scss" scoped>

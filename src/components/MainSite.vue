@@ -38,6 +38,29 @@ import SiteButton from './site-content/SiteButton.vue'
           </p>
         </div>
       </template>
+      <template #snipets-image="{ img, alt }">
+        <div class="snipet-image">
+          <img :src="img" :alt="alt" />
+        </div>
+      </template>
+      <template #snipet-feature>
+        <div class="snipets-features-main">
+          <div class="feature-search">
+            <h2 class="feature-search__title">Quick Search</h2>
+            <p class="feature-search__about">
+              Easily search your snippets by content, category, web address, application, and more.
+            </p>
+          </div>
+          <div class="feature-cloud">
+            <h2 class="feature-cloud__title">iCloud Sync</h2>
+            <p class="feature-cloud__about">Instantly saves and syncs snippets across all your devices.</p>
+          </div>
+          <div class="feature-history">
+            <h2 class="feature-history__title">Complete History</h2>
+            <p class="feature-history__about">Retrieve any snippets from the first moment you started using the app.</p>
+          </div>
+        </div>
+      </template>
     </SiteSnipets>
   </main>
 </template>
@@ -96,10 +119,29 @@ import SiteButton from './site-content/SiteButton.vue'
       font-size: 2rem;
       font-weight: $secondary-weight;
       color: $gray-700;
+      text-align: center;
     }
     &__description {
       text-align: center;
-      color:$gray-500;
+      color: $gray-500;
+    }
+  }
+  .snipets-features-main{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em 0;
+    .feature-search,
+    .feature-cloud,
+    .feature-history{
+      &__title{
+        font-size: 2rem;
+        font-weight: $secondary-weight;
+        text-align: center;
+      }
+      &__about{
+        text-align: center;
+        color: $gray-700;
+      }
     }
   }
 }
