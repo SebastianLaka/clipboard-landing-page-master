@@ -1,22 +1,6 @@
 <script setup>
-import { reactive } from 'vue';
 import HeaderSite from './site-content/HeaderSite.vue'
 import SiteButton from './site-content/SiteButton.vue'
-
-const styleDownloadButtons = reactive({
-  iOS:{
-    backgroundColor: 'hsl(171, 66%, 44%)',
-    border: '.2em solid hsl(171, 66%, 44%)',
-    borderColor: 'hsl(171, 66%, 35%)',
-    borderTop: 0
-  },
-  Mac:{
-    backgroundColor: 'hsl(233, 100%, 69%)',
-    border: '.2em solid hsl(233, 100%, 69%)',
-    borderColor: 'hsl(233, 92%, 63%)',
-    borderTop: 0
-  }
-})
 </script>
 <template>
   <HeaderSite>
@@ -37,8 +21,8 @@ const styleDownloadButtons = reactive({
     </template>
     <template #actions>
       <div class="header-buttons">
-        <SiteButton :style="styleDownloadButtons.iOS">Download for iOS</SiteButton>
-        <SiteButton :style="styleDownloadButtons.Mac">Download for Mac</SiteButton>
+        <SiteButton :class="'ios-button'">Download for iOS</SiteButton>
+        <SiteButton :class="'mac-button'">Download for Mac</SiteButton>
       </div>
     </template>
   </HeaderSite>
@@ -64,6 +48,24 @@ const styleDownloadButtons = reactive({
     flex-direction: column;
     width: 100%;
     gap: 1.5em 0;
+  }
+  .ios-button{
+    background-color: $green-500;
+    border: .2em solid $green-500;
+    border-color: $green-700;
+    border-top: 0;
+    &:hover{
+      background-color: $green-0;
+    }
+  }
+  .mac-button{
+    background-color: $blue-100;
+    border: .2em solid $blue-100;
+    border-color: $blue-700;
+    border-top: 0;
+    &:hover{
+      background-color: $blue-0;
+    }
   }
 }
 @media (min-width: 768px){
