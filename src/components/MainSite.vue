@@ -38,29 +38,35 @@ import SiteButton from './site-content/SiteButton.vue'
           </p>
         </div>
       </template>
-      <template #snipets-image="{ img, alt }">
-        <div class="snipet-image">
-          <img :src="img" :alt="alt" />
-        </div>
-      </template>
-      <template #snipet-feature>
-        <div class="snipets-features-main">
-          <div class="feature-search">
-            <h2 class="feature-search__title">Quick Search</h2>
-            <p class="feature-search__about">
-              Easily search your snippets by content, category, web address, application, and more.
-            </p>
+        <template #snipets-image="{ img, alt }">
+          <div class="snipet-image">
+            <img :src="img" :alt="alt" />
           </div>
-          <div class="feature-cloud">
-            <h2 class="feature-cloud__title">iCloud Sync</h2>
-            <p class="feature-cloud__about">Instantly saves and syncs snippets across all your devices.</p>
+        </template>
+        <template #snipet-feature>
+          <div class="snipets-features-main">
+            <div class="feature-search">
+              <h2 class="feature-search__title">Quick Search</h2>
+              <p class="feature-search__about">
+                Easily search your snippets by content, category, web address, application, and
+                more.
+              </p>
+            </div>
+            <div class="feature-cloud">
+              <h2 class="feature-cloud__title">iCloud Sync</h2>
+              <p class="feature-cloud__about">
+                Instantly saves and syncs snippets across all your devices.
+              </p>
+            </div>
+            <div class="feature-history">
+              <h2 class="feature-history__title">Complete History</h2>
+              <p class="feature-history__about">
+                Retrieve any snippets from the first moment you started using the app.
+              </p>
+            </div>
           </div>
-          <div class="feature-history">
-            <h2 class="feature-history__title">Complete History</h2>
-            <p class="feature-history__about">Retrieve any snippets from the first moment you started using the app.</p>
-          </div>
-        </div>
-      </template>
+        </template>
+      
     </SiteSnipets>
   </main>
 </template>
@@ -71,7 +77,7 @@ import SiteButton from './site-content/SiteButton.vue'
   .site-container {
     display: flex;
     flex-direction: column;
-    gap: 3em 0;
+    gap: 5em 0;
     .header-description {
       &__header {
         font-size: 3rem;
@@ -115,6 +121,7 @@ import SiteButton from './site-content/SiteButton.vue'
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.25em 0;
     &__header {
       font-size: 2rem;
       font-weight: $secondary-weight;
@@ -126,19 +133,19 @@ import SiteButton from './site-content/SiteButton.vue'
       color: $gray-500;
     }
   }
-  .snipets-features-main{
+  .snipets-features-main {
     display: flex;
     flex-direction: column;
     gap: 2.5em 0;
     .feature-search,
     .feature-cloud,
-    .feature-history{
-      &__title{
+    .feature-history {
+      &__title {
         font-size: 2rem;
         font-weight: $secondary-weight;
         text-align: center;
       }
-      &__about{
+      &__about {
         text-align: center;
         color: $gray-700;
       }
@@ -162,6 +169,9 @@ import SiteButton from './site-content/SiteButton.vue'
   .header-buttons {
     grid-column: 2/7;
     width: 100%;
+  }
+  .header-snipets{
+    gap: 1.5em 0;
   }
 }
 @media (min-width: 992px) {
