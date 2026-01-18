@@ -14,8 +14,5 @@
     color: #fff;
     transition: background-color 0.3s ease-in-out;
   }
-  .site-button:hover {
-    background-color: red;
-  }
 }
 </style>

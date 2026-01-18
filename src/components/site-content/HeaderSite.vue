@@ -21,6 +21,17 @@ const imageSlotProps = {
         align-items: center;
         padding: 1em;
         gap: 2em 0;
+        background-image: url(../../assets/images/bg-header-mobile.png);
+        background-repeat: no-repeat;
+        background-position: right top;
     }
+}
+@media (min-width: 768px){
+  .header-site{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-image: url(../../assets/images/bg-header-desktop.png);
+  }
 }
 </style>

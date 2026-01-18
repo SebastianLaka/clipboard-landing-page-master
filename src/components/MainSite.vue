@@ -21,7 +21,10 @@ const styleDownloadButtons = reactive({
 <template>
   <HeaderSite>
     <template #logo="{ img, alt }">
-      <img :src="img" :alt="alt" />
+      <div class="header-logo-area">
+        <img :src="img" :alt="alt"/>
+      </div>
+      
     </template>
     <template #content>
       <div class="header-description">
@@ -59,9 +62,29 @@ const styleDownloadButtons = reactive({
   .header-buttons {
     display: flex;
     flex-direction: column;
-    justify-self: start;
     width: 100%;
     gap: 1.5em 0;
   }
+}
+@media (min-width: 768px){
+  .header-logo-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 4/5;
+    
+  }
+  .header-description{
+    grid-column: 2/7;
+    grid-row: 2/2;
+    &__header{
+      grid-column: 3/7;
+    }
+  }
+  .header-buttons{
+    grid-column: 2/7;
+    width: 100%;
+  }
+
 }
 </style>
