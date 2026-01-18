@@ -15,4 +15,9 @@
     transition: background-color 0.3s ease-in-out;
   }
 }
+@media (min-width: 992px){
+  .site-button{
+    padding: 1em 4em;
+  }
+}
 </style>

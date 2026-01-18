@@ -1,8 +1,8 @@
 <script setup>
-  import MainSite from './components/MainSite.vue';
+import MainSite from './components/MainSite.vue'
 </script>
 <template>
-  <MainSite />
+    <MainSite />
 </template>
 
 <style lang="scss">
