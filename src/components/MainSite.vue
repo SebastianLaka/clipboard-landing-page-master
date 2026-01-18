@@ -1,16 +1,17 @@
 <script setup>
 import HeaderSite from './site-content/Header/HeaderSite.vue'
+import SiteSnipets from './site-content/Snipets/SiteSnipets.vue'
 import SiteButton from './site-content/SiteButton.vue'
 </script>
 <template>
   <main class="site-container">
     <HeaderSite>
-      <template #logo="{ img, alt }">
+      <template #header-logo="{ img, alt }">
         <div class="header-logo-area">
           <img :src="img" :alt="alt" />
         </div>
       </template>
-      <template #content>
+      <template #header-content>
         <div class="header-description">
           <h1 class="header-description__header">A history of everything you copy</h1>
           <p class="header-description__content">
@@ -19,59 +20,88 @@ import SiteButton from './site-content/SiteButton.vue'
           </p>
         </div>
       </template>
-      <template #actions>
+      <template #header-actions>
         <div class="header-buttons">
           <SiteButton class="header-buttons__ios-button">Download for iOS</SiteButton>
           <SiteButton class="header-buttons__mac-button">Download for Mac</SiteButton>
         </div>
       </template>
     </HeaderSite>
+    <SiteSnipets>
+      <template #snipets-header>
+        <div class="header-snipets">
+          <h2 class="header-snipets__header">Keep track of your snippets</h2>
+          <p class="header-snipets__description">
+            Clipboard instantly stores any item you copy in the cloud, meaning you can access your
+            snippets immediately on all your devices. Our Mac and iOS apps will help you organize
+            everything.
+          </p>
+        </div>
+      </template>
+    </SiteSnipets>
   </main>
 </template>
 <style lang="scss" scoped>
 @use '../assets/scss/font' as *;
 @use '../assets/scss/colors' as *;
 @media (min-width: 375px) {
-  .site-container{
-  .header-description {
+  .site-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em 0;
+    .header-description {
+      &__header {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: $secondary-weight;
+        color: $gray-700;
+      }
+      &__content {
+        text-align: center;
+        color: $gray-500;
+      }
+    }
+    .header-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1.5em 0;
+      &__ios-button {
+        background-color: $green-500;
+        border: 0.2em solid $green-500;
+        border-color: $green-700;
+        border-top: 0;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+          background-color: $green-0;
+        }
+      }
+      &__mac-button {
+        background-color: $blue-100;
+        border: 0.2em solid $blue-100;
+        border-color: $blue-700;
+        border-top: 0;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+          background-color: $blue-0;
+        }
+      }
+    }
+  }
+  .header-snipets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__header {
       font-size: 2rem;
-      text-align: center;
       font-weight: $secondary-weight;
       color: $gray-700;
     }
-    &__content {
+    &__description {
       text-align: center;
-      color: $gray-500;
+      color:$gray-500;
     }
   }
-  .header-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1.5em 0;
-    &__ios-button {
-      background-color: $green-500;
-      border: 0.2em solid $green-500;
-      border-color: $green-700;
-      border-top: 0;
-      transition: background-color 0.3s ease-in-out;
-      &:hover {
-        background-color: $green-0;
-      }
-    }
-    &__mac-button {
-      background-color: $blue-100;
-      border: 0.2em solid $blue-100;
-      border-color: $blue-700;
-      border-top: 0;
-      transition: background-color 0.3s ease-in-out;
-      &:hover {
-        background-color: $blue-0;
-      }
-    }
-  }
-}
 }
 @media (min-width: 768px) {
   .header-logo-area {

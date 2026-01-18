@@ -7,9 +7,9 @@ const imageSlotProps = {
 </script>
 <template>
   <header class="header-site">
-    <slot name="logo" v-bind="imageSlotProps" />
-    <slot name="content" />
-    <slot name="actions" />
+    <slot name="header-logo" v-bind="imageSlotProps" />
+    <slot name="header-content" />
+    <slot name="header-actions" />
   </header>
 </template>
 <style lang="scss" scoped>
