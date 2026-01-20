@@ -8,8 +8,10 @@ const snipetImage = {
 <template>
   <section class="site-snipets">
     <slot name="snipets-header" />
-    <slot name="snipets-image" v-bind="snipetImage" />
-    <slot name="snipet-feature" />
+    <div class="snipets-content">
+      <slot name="snipets-image" v-bind="snipetImage" />
+      <slot name="snipet-feature" />
+    </div>
   </section>
 </template>
 <style lang="scss" scoped>
@@ -19,7 +21,7 @@ const snipetImage = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 1em;
+    padding: 0 1em 0 0;
     gap: 3em 0;
   }
 }
@@ -28,4 +30,16 @@ const snipetImage = {
     gap: 5em 0;
   }
 }
+@media (min-width: 992px) {
+  .site-snipets {
+    grid-column: 1/ -1;
+    .snipets-content{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-content: center;
+      gap: 0 5em;
+    }
+  }
+}
+
 </style>

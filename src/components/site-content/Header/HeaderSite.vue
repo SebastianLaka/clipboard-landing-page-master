@@ -36,7 +36,7 @@ const headerLogo = {
 }
 @media (min-width: 992px) {
   .header-site {
-    grid-column: 1/ -1;
+    grid-template-columns: repeat(12, 1fr);
   }
 }
 </style>

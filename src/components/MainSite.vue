@@ -7,9 +7,7 @@ import SiteButton from './site-content/SiteButton.vue'
   <main class="site-container">
     <HeaderSite>
       <template #header-logo="{ img, alt }">
-        <div class="header-logo-area">
-          <img :src="img" :alt="alt" />
-        </div>
+          <img :src="img" :alt="alt" class="header-logo" />
       </template>
       <template #header-content>
         <div class="header-description">
@@ -38,35 +36,31 @@ import SiteButton from './site-content/SiteButton.vue'
           </p>
         </div>
       </template>
-        <template #snipets-image="{ img, alt }">
-          <div class="snipet-image">
-            <img :src="img" :alt="alt" />
+      <template #snipets-image="{ img, alt }">
+        <img :src="img" :alt="alt" class="snipet-image" />
+      </template>
+      <template #snipet-feature>
+        <div class="snipets-features-main">
+          <div class="feature-search">
+            <h2 class="feature-search__title">Quick Search</h2>
+            <p class="feature-search__about">
+              Easily search your snippets by content, category, web address, application, and more.
+            </p>
           </div>
-        </template>
-        <template #snipet-feature>
-          <div class="snipets-features-main">
-            <div class="feature-search">
-              <h2 class="feature-search__title">Quick Search</h2>
-              <p class="feature-search__about">
-                Easily search your snippets by content, category, web address, application, and
-                more.
-              </p>
-            </div>
-            <div class="feature-cloud">
-              <h2 class="feature-cloud__title">iCloud Sync</h2>
-              <p class="feature-cloud__about">
-                Instantly saves and syncs snippets across all your devices.
-              </p>
-            </div>
-            <div class="feature-history">
-              <h2 class="feature-history__title">Complete History</h2>
-              <p class="feature-history__about">
-                Retrieve any snippets from the first moment you started using the app.
-              </p>
-            </div>
+          <div class="feature-cloud">
+            <h2 class="feature-cloud__title">iCloud Sync</h2>
+            <p class="feature-cloud__about">
+              Instantly saves and syncs snippets across all your devices.
+            </p>
           </div>
-        </template>
-      
+          <div class="feature-history">
+            <h2 class="feature-history__title">Complete History</h2>
+            <p class="feature-history__about">
+              Retrieve any snippets from the first moment you started using the app.
+            </p>
+          </div>
+        </div>
+      </template>
     </SiteSnipets>
   </main>
 </template>
@@ -153,7 +147,7 @@ import SiteButton from './site-content/SiteButton.vue'
   }
 }
 @media (min-width: 768px) {
-  .header-logo-area {
+  .header-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,19 +164,59 @@ import SiteButton from './site-content/SiteButton.vue'
     grid-column: 2/7;
     width: 100%;
   }
-  .header-snipets{
+  .header-snipets {
     gap: 1.5em 0;
   }
 }
 @media (min-width: 992px) {
   .site-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    .header-logo {
+      grid-column: 7/7;
+      transform: translateX(-50%);
+    }
+    .header-description {
+      grid-column: 3/11;
+    }
     .header-buttons {
       flex-direction: row;
-      gap: 0 1em;
+      grid-column: 3/11;
       justify-content: space-evenly;
+      gap: 0 1em;
     }
+    .header-snipets {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      &__header {
+        grid-column: 4/10;
+      }
+      &__description {
+        grid-column: 3/11;
+      }
+    }
+    .snipet-image {
+      grid-column: 1/8;
+      transform: translateX(-28px);
+    }
+    .snipets-features-main {
+      justify-content: center;
+      grid-column: 8/12;
+      .feature-search,
+      .feature-cloud,
+      .feature-history {
+        &__title {
+          font-size: 1.75rem;
+        }
+        &__title,
+        &__about {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1350px) {
+  .snipet-image {
+    justify-self: stretch;
   }
 }
 </style>
