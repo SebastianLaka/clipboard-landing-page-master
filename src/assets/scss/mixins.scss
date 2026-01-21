@@ -1,0 +1,26 @@
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-column-center{
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin grid-tablet{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+@mixin grid-12-col{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin site-button($background-color, $border, $border-color, $border-top: 0) {
+  background-color: $background-color;
+  border: $border;
+  border-color: $border-color;
+  border-top: $border-top;
+  transition: background-color 0.3s ease-in-out;
+}

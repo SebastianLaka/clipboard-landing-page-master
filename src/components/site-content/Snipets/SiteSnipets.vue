@@ -15,14 +15,16 @@ const snipetImage = {
   </section>
 </template>
 <style lang="scss" scoped>
+  @use '../../../assets/scss/mixins.scss' as *;
 @media (min-width: 375px) {
   .site-snipets {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-column-center;
     padding: 0 1em 0 0;
     gap: 3em 0;
+    .snipets-content{
+      @include flex-column;
+      gap: 3em 0;
+    }
   }
 }
 @media (min-width: 768px) {
@@ -34,8 +36,7 @@ const snipetImage = {
   .site-snipets {
     grid-column: 1/ -1;
     .snipets-content{
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      @include grid-12-col;
       align-content: center;
       gap: 0 5em;
     }

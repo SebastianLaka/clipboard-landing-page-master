@@ -7,7 +7,7 @@ import SiteButton from './site-content/SiteButton.vue'
   <main class="site-container">
     <HeaderSite>
       <template #header-logo="{ img, alt }">
-          <img :src="img" :alt="alt" class="header-logo" />
+        <img :src="img" :alt="alt" class="header-logo" />
       </template>
       <template #header-content>
         <div class="header-description">
@@ -67,10 +67,10 @@ import SiteButton from './site-content/SiteButton.vue'
 <style lang="scss" scoped>
 @use '../assets/scss/font' as *;
 @use '../assets/scss/colors' as *;
+@use '../assets//scss/mixins.scss' as *;
 @media (min-width: 375px) {
   .site-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 5em 0;
     .header-description {
       &__header {
@@ -85,26 +85,27 @@ import SiteButton from './site-content/SiteButton.vue'
       }
     }
     .header-buttons {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
       width: 100%;
       gap: 1.5em 0;
       &__ios-button {
-        background-color: $green-500;
-        border: 0.2em solid $green-500;
-        border-color: $green-700;
-        border-top: 0;
-        transition: background-color 0.3s ease-in-out;
+        @include site-button(
+          $background-color: $green-500,
+          $border: 0.2em solid $green-700,
+          $border-color: $green-700,
+          $border-top: 0
+        );
         &:hover {
           background-color: $green-0;
         }
       }
       &__mac-button {
-        background-color: $blue-100;
-        border: 0.2em solid $blue-100;
-        border-color: $blue-700;
-        border-top: 0;
-        transition: background-color 0.3s ease-in-out;
+        @include site-button(
+          $background-color: $blue-100,
+          $border: 0.2em solid $blue-100,
+          $border-color: $blue-700,
+          $border-top: 0
+        );
         &:hover {
           background-color: $blue-0;
         }
@@ -112,8 +113,7 @@ import SiteButton from './site-content/SiteButton.vue'
     }
   }
   .header-snipets {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     gap: 1.25em 0;
     &__header {
@@ -128,8 +128,7 @@ import SiteButton from './site-content/SiteButton.vue'
     }
   }
   .snipets-features-main {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 2.5em 0;
     .feature-search,
     .feature-cloud,
@@ -184,8 +183,7 @@ import SiteButton from './site-content/SiteButton.vue'
       gap: 0 1em;
     }
     .header-snipets {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      @include grid-12-col;
       &__header {
         grid-column: 4/10;
       }

@@ -13,14 +13,12 @@ const headerLogo = {
   </header>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/mixins.scss' as *;
 @media (min-width: 375px) {
   .header-site {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-column-center;
     padding: 3em 1em 0 1em;
-    gap: 2em 0;
+    gap: 3em 0;
     background-image: url(../../../assets/images/bg-header-mobile.png);
     background-repeat: no-repeat;
     background-position: right top;
@@ -28,15 +26,14 @@ const headerLogo = {
 }
 @media (min-width: 768px) {
   .header-site {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    @include grid-tablet;
     grid-template-rows: repeat(3, 1fr);
     background-image: url(../../../assets/images/bg-header-desktop.png);
   }
 }
 @media (min-width: 992px) {
   .header-site {
-    grid-template-columns: repeat(12, 1fr);
+    @include grid-12-col;
   }
 }
 </style>
