@@ -48,7 +48,14 @@ const partnersLogos = {
 @use '../../../assets/scss/mixins.scss' as *;
 @media (min-width: 375px){
     .partners-logos-main{
-        @include flex-column;
+        @include flex-column-center;
+        gap: 3.25em 0;
+    }
+}
+@media (min-width: 992px){
+    .partners-logos-main{
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 </style>
