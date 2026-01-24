@@ -3,6 +3,7 @@ import HeaderSite from './site-content/Header/HeaderSite.vue'
 import SiteSnipets from './site-content/Snipets/SiteSnipets.vue'
 import SiteClipboard from './site-content/clipboard/SiteClipboard.vue'
 import SiteWorkflow from './site-content/workflow/SiteWorkflow.vue'
+import SitePartners from './site-content/partners/SitePartners.vue'
 import SiteButton from './site-content/SiteButton.vue'
 </script>
 <template>
@@ -114,6 +115,11 @@ import SiteButton from './site-content/SiteButton.vue'
         </div>
       </template>
     </SiteWorkflow>
+    <SitePartners>
+      <template #partners-list="{img, alt}">
+        <img :src="img" :alt="alt">
+      </template>
+    </SitePartners>
   </main>
 </template>
 <style lang="scss" scoped>
