@@ -87,7 +87,7 @@ import SiteButton from './site-content/SiteButton.vue'
       </template>
       <template #workflow-blacklist="{ img, alt }">
         <div class="blacklist-workflow">
-          <img :src="img" :alt="alt" class="blacklist-workflow__icon"/>
+          <img :src="img" :alt="alt" class="blacklist-workflow__icon" />
           <h2 class="blacklist-workflow__header">Create blacklists</h2>
           <p class="blacklist-workflow__description">
             Ensure sensitive information never makes its way to your clipboard by excluding certain
@@ -97,7 +97,7 @@ import SiteButton from './site-content/SiteButton.vue'
       </template>
       <template #workflow-text="{ img, alt }">
         <div class="text-workflow">
-          <img :src="img" :alt="alt" class="text-workflow__icon"/>
+          <img :src="img" :alt="alt" class="text-workflow__icon" />
           <h2 class="text-workflow__header">Plain text snipets</h2>
           <p class="text-workflow__description">
             Remove unwanted formatting from copied text for a consistent look.
@@ -106,7 +106,7 @@ import SiteButton from './site-content/SiteButton.vue'
       </template>
       <template #workflow-preview="{ img, alt }">
         <div class="preview-workflow">
-          <img :src="img" :alt="alt" class="preview-workflow__icon"/>
+          <img :src="img" :alt="alt" class="preview-workflow__icon" />
           <h2 class="preview-workflow__header">Sneak preview</h2>
           <p class="preview-workflow__description">
             Quick preview of all snippets on your Clipboard for easy access.
@@ -244,7 +244,7 @@ import SiteButton from './site-content/SiteButton.vue'
   .text-workflow,
   .preview-workflow {
     gap: 1em;
-    &__header{
+    &__header {
       font-size: 2rem;
       font-weight: $secondary-weight;
     }
@@ -300,36 +300,58 @@ import SiteButton from './site-content/SiteButton.vue'
         justify-self: stretch;
       }
     }
-    .workflow-header-content{
+    .workflow-header-content {
       grid-column: 4/10;
     }
-    .blacklist-workflow{
+    .blacklist-workflow {
       grid-column: 1/6;
     }
-    .text-workflow{
+    .text-workflow {
       grid-column: 7/13;
-      
     }
-    .preview-workflow{
+    .preview-workflow {
       grid-column: 4/10;
-      
     }
   }
 }
 @media (min-width: 1350px) {
-   .site-container {
-  .snipet-image {
-    justify-self: stretch;
-  }
-  .blacklist-workflow{
+  .site-container {
+    .header-description{
+      &__content{
+          padding: 0 12em;
+      }
+    }
+    .header-snipets{
+      &__description{
+        width: 80ch;
+      }
+    }
+    .snipet-image {
+      justify-self: stretch;
+    }
+    .clipboard-main {
+      &__description {
+        width: 65ch;
+      }
+    }
+    .blacklist-workflow {
       grid-column: 1/4;
+      &__description {
+        padding: 0 1.25em;
+      }
     }
-    .text-workflow{
+    .text-workflow {
       grid-column: 5/9;
+      &__description {
+        padding: 0 1.25em;
+      }
     }
-    .preview-workflow{
+    .preview-workflow {
       grid-column: 9/13;
+      &__description {
+        padding: 0 2em;
+      }
     }
-}
+  }
 }
 </style>
