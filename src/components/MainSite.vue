@@ -1,6 +1,7 @@
 <script setup>
 import HeaderSite from './site-content/Header/HeaderSite.vue'
 import SiteSnipets from './site-content/Snipets/SiteSnipets.vue'
+import SiteClipboard from './site-content/clipboard/SiteClipboard.vue'
 import SiteButton from './site-content/SiteButton.vue'
 </script>
 <template>
@@ -62,6 +63,18 @@ import SiteButton from './site-content/SiteButton.vue'
         </div>
       </template>
     </SiteSnipets>
+    <SiteClipboard>
+      <template #header>
+        <h1 class="clipboard-main__header">Access Clipboard anywhere</h1>
+        <p class="clipboard-main__description">
+          Whether you’re on the go, or at your computer, you can access all your Clipboard snippets
+          in a few simple clicks.
+        </p>
+      </template>
+      <template #clipboard-image="{ img, alt }">
+        <img :src="img" :alt="alt" class="clipboard-main__img" />
+      </template>
+    </SiteClipboard>
   </main>
 </template>
 <style lang="scss" scoped>
@@ -71,17 +84,16 @@ import SiteButton from './site-content/SiteButton.vue'
 @media (min-width: 375px) {
   .site-container {
     @include flex-column;
-    gap: 5em 0;
+    padding: 0 1em;
+    gap: 10em 0;
     .header-description {
       &__header {
         font-size: 3rem;
         text-align: center;
         font-weight: $secondary-weight;
-        color: $gray-700;
       }
       &__content {
         text-align: center;
-        color: $gray-500;
       }
     }
     .header-buttons {
@@ -119,12 +131,10 @@ import SiteButton from './site-content/SiteButton.vue'
     &__header {
       font-size: 2rem;
       font-weight: $secondary-weight;
-      color: $gray-700;
       text-align: center;
     }
     &__description {
       text-align: center;
-      color: $gray-500;
     }
   }
   .snipets-features-main {
@@ -140,8 +150,17 @@ import SiteButton from './site-content/SiteButton.vue'
       }
       &__about {
         text-align: center;
-        color: $gray-700;
       }
+    }
+  }
+  .clipboard-main {
+    &__header {
+      font-size: 2rem;
+      font-weight: $secondary-weight;
+    }
+    &__description {
+      text-align: center;
+      padding: 0 1.25em;
     }
   }
 }
@@ -208,6 +227,13 @@ import SiteButton from './site-content/SiteButton.vue'
         &__about {
           text-align: left;
         }
+      }
+    }
+    .clipboard-main {
+      &__img {
+        grid-row: 2/2;
+        grid-column: 3/11;
+        justify-self: stretch;
       }
     }
   }

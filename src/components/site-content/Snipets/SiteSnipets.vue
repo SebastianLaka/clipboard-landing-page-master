@@ -2,7 +2,7 @@
 import SnipetImage from '../../../assets/images/image-computer.png'
 const snipetImage = {
   img: SnipetImage,
-  alt: 'Snipet computer image',
+  alt: 'Computer with wallpaper',
 }
 </script>
 <template>
@@ -19,7 +19,6 @@ const snipetImage = {
 @media (min-width: 375px) {
   .site-snipets {
     @include flex-column-center;
-    padding: 0 1em 0 0;
     gap: 3em 0;
     .snipets-content{
       @include flex-column;
@@ -35,6 +34,7 @@ const snipetImage = {
 @media (min-width: 992px) {
   .site-snipets {
     grid-column: 1/ -1;
+    padding: 0 1em 0 0;
     .snipets-content{
       @include grid-12-col;
       align-content: center;

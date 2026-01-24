@@ -1,4 +1,5 @@
 @use './font' as *;
+@use './colors.scss' as *;
 *,
 *::before,
 *::after {
@@ -18,6 +19,10 @@ span {
   font-size: $base-size;
   font-weight: $primary-weight;
   line-height: 150%;
+  color: $gray-700;
+}
+p{
+  color: $gray-500;
 }
 button {
   font-family: 'Bai Jamjuree', sans-serif;
