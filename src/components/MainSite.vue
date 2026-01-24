@@ -2,6 +2,7 @@
 import HeaderSite from './site-content/Header/HeaderSite.vue'
 import SiteSnipets from './site-content/Snipets/SiteSnipets.vue'
 import SiteClipboard from './site-content/clipboard/SiteClipboard.vue'
+import SiteWorkflow from './site-content/workflow/SiteWorkflow.vue'
 import SiteButton from './site-content/SiteButton.vue'
 </script>
 <template>
@@ -75,6 +76,44 @@ import SiteButton from './site-content/SiteButton.vue'
         <img :src="img" :alt="alt" class="clipboard-main__img" />
       </template>
     </SiteClipboard>
+    <SiteWorkflow>
+      <template #workflow-header>
+        <div class="workflow-header-content">
+          <h1 class="workflow-header-content__header">Supercharge your workflow</h1>
+          <p class="workflow-header-content__description">
+            We’ve got the tools to boost your productivity.
+          </p>
+        </div>
+      </template>
+      <template #workflow-blacklist="{ img, alt }">
+        <div class="blacklist-workflow">
+          <img :src="img" :alt="alt" class="blacklist-workflow__icon"/>
+          <h2 class="blacklist-workflow__header">Create blacklists</h2>
+          <p class="blacklist-workflow__description">
+            Ensure sensitive information never makes its way to your clipboard by excluding certain
+            sources.
+          </p>
+        </div>
+      </template>
+      <template #workflow-text="{ img, alt }">
+        <div class="text-workflow">
+          <img :src="img" :alt="alt" class="text-workflow__icon"/>
+          <h2 class="text-workflow__header">Plain text snipets</h2>
+          <p class="text-workflow__description">
+            Remove unwanted formatting from copied text for a consistent look.
+          </p>
+        </div>
+      </template>
+      <template #workflow-preview="{ img, alt }">
+        <div class="preview-workflow">
+          <img :src="img" :alt="alt" class="preview-workflow__icon"/>
+          <h2 class="preview-workflow__header">Sneak preview</h2>
+          <p class="preview-workflow__description">
+            Quick preview of all snippets on your Clipboard for easy access.
+          </p>
+        </div>
+      </template>
+    </SiteWorkflow>
   </main>
 </template>
 <style lang="scss" scoped>
@@ -157,11 +196,27 @@ import SiteButton from './site-content/SiteButton.vue'
     &__header {
       font-size: 2rem;
       font-weight: $secondary-weight;
+      text-align: center;
     }
     &__description {
       text-align: center;
       padding: 0 1.25em;
     }
+  }
+  .workflow-header-content {
+    @include flex-column;
+    grid-column: 3/11;
+    gap: 0.5em 0;
+    &__header {
+      font-size: 2rem;
+      font-weight: $secondary-weight;
+    }
+  }
+  .blacklist-workflow,
+  .text-workflow,
+  .preview-workflow {
+    @include flex-column-center;
+    padding: 0 3.5em;
   }
 }
 @media (min-width: 768px) {
@@ -184,6 +239,15 @@ import SiteButton from './site-content/SiteButton.vue'
   }
   .header-snipets {
     gap: 1.5em 0;
+  }
+  .blacklist-workflow,
+  .text-workflow,
+  .preview-workflow {
+    gap: 1em;
+    &__header{
+      font-size: 2rem;
+      font-weight: $secondary-weight;
+    }
   }
 }
 @media (min-width: 992px) {
@@ -236,11 +300,36 @@ import SiteButton from './site-content/SiteButton.vue'
         justify-self: stretch;
       }
     }
+    .workflow-header-content{
+      grid-column: 4/10;
+    }
+    .blacklist-workflow{
+      grid-column: 1/6;
+    }
+    .text-workflow{
+      grid-column: 7/13;
+      
+    }
+    .preview-workflow{
+      grid-column: 4/10;
+      
+    }
   }
 }
 @media (min-width: 1350px) {
+   .site-container {
   .snipet-image {
     justify-self: stretch;
   }
+  .blacklist-workflow{
+      grid-column: 1/4;
+    }
+    .text-workflow{
+      grid-column: 5/9;
+    }
+    .preview-workflow{
+      grid-column: 9/13;
+    }
+}
 }
 </style>
