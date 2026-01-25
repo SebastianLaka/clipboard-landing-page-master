@@ -44,7 +44,7 @@ const workflowIcons = {
 }
 @media (min-width: 1350px) {
   .workflow-main {
-    gap: 6em 0;
+    gap: 4em;
   }
 }
 </style>

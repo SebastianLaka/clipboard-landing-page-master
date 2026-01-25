@@ -5,6 +5,7 @@ import SiteClipboard from './site-content/clipboard/SiteClipboard.vue'
 import SiteWorkflow from './site-content/workflow/SiteWorkflow.vue'
 import SitePartners from './site-content/partners/SitePartners.vue'
 import SiteButton from './site-content/SiteButton.vue'
+import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
 </script>
 <template>
   <main class="site-container">
@@ -23,8 +24,8 @@ import SiteButton from './site-content/SiteButton.vue'
       </template>
       <template #header-actions>
         <div class="header-buttons">
-          <SiteButton class="header-buttons__ios-button">Download for iOS</SiteButton>
-          <SiteButton class="header-buttons__mac-button">Download for Mac</SiteButton>
+          <SiteButton class="header-buttons__ios">Download for iOS</SiteButton>
+          <SiteButton class="header-buttons__mac">Download for Mac</SiteButton>
         </div>
       </template>
     </HeaderSite>
@@ -116,10 +117,25 @@ import SiteButton from './site-content/SiteButton.vue'
       </template>
     </SiteWorkflow>
     <SitePartners>
-      <template #partners-list="{img, alt}">
-        <img :src="img" :alt="alt">
+      <template #partners-list="{ img, alt }">
+          <img :src="img" :alt="alt" />
       </template>
     </SitePartners>
+    <SiteDownlowad>
+      <template #download-content>
+        <div class="download-header">
+          <h1 class="download-header__header">Clipboard for iOS and Mac OS</h1>
+          <p class="download-header__content">
+            Available for free on the App Store. Download for Mac or iOS, sync with iCloud and
+            you’re ready to start adding to your clipboard.
+          </p>
+        </div>
+        <div class="download-actions">
+          <SiteButton class="download-actions__ios">Download for iOS</SiteButton>
+          <SiteButton class="download-actions__mac">Download for Mac</SiteButton>
+        </div>
+      </template>
+    </SiteDownlowad>
   </main>
 </template>
 <style lang="scss" scoped>
@@ -131,7 +147,10 @@ import SiteButton from './site-content/SiteButton.vue'
     @include flex-column;
     padding: 0 1em;
     gap: 10em 0;
-    .header-description {
+    .header-description,
+    .download-header {
+      @include flex-column;
+      gap: 1.5em 0;
       &__header {
         font-size: 3rem;
         text-align: center;
@@ -141,11 +160,17 @@ import SiteButton from './site-content/SiteButton.vue'
         text-align: center;
       }
     }
-    .header-buttons {
+    .download-header {
+      &__header {
+        font-size: 2rem;
+      }
+    }
+    .header-buttons,
+    .download-actions {
       @include flex-column;
       width: 100%;
       gap: 1.5em 0;
-      &__ios-button {
+      &__ios {
         @include site-button(
           $background-color: $green-500,
           $border: 0.2em solid $green-700,
@@ -156,7 +181,7 @@ import SiteButton from './site-content/SiteButton.vue'
           background-color: $green-0;
         }
       }
-      &__mac-button {
+      &__mac {
         @include site-button(
           $background-color: $blue-100,
           $border: 0.2em solid $blue-100,
@@ -322,13 +347,13 @@ import SiteButton from './site-content/SiteButton.vue'
 }
 @media (min-width: 1350px) {
   .site-container {
-    .header-description{
-      &__content{
-          padding: 0 12em;
+    .header-description {
+      &__content {
+        padding: 0 12em;
       }
     }
-    .header-snipets{
-      &__description{
+    .header-snipets {
+      &__description {
         width: 80ch;
       }
     }
@@ -341,21 +366,28 @@ import SiteButton from './site-content/SiteButton.vue'
       }
     }
     .blacklist-workflow {
-      grid-column: 1/4;
+      grid-column: 2/5;
+      padding: 0 1em;
+      gap: 0.6em 0;
       &__description {
-        padding: 0 1.25em;
+        padding: 0 1em;
+        width: 40ch;
       }
     }
     .text-workflow {
       grid-column: 5/9;
+      padding: 0 1em;
       &__description {
-        padding: 0 1.25em;
+        padding: 0 .5em;
+        width: 40ch;
       }
     }
     .preview-workflow {
-      grid-column: 9/13;
+      grid-column: 9/12;
+      padding: 0 1em;
       &__description {
-        padding: 0 2em;
+        padding: 0 1em;
+        width: 40ch;
       }
     }
   }
