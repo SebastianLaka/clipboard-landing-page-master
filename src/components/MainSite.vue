@@ -123,9 +123,9 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
     </SitePartners>
     <SiteDownlowad>
       <template #download-content>
-        <div class="download-header">
-          <h1 class="download-header__header">Clipboard for iOS and Mac OS</h1>
-          <p class="download-header__content">
+        <div class="download-description">
+          <h1 class="download-description__header">Clipboard for iOS and Mac OS</h1>
+          <p class="download-description__content">
             Available for free on the App Store. Download for Mac or iOS, sync with iCloud and
             you’re ready to start adding to your clipboard.
           </p>
@@ -148,7 +148,7 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
     padding: 0 1em;
     gap: 10em 0;
     .header-description,
-    .download-header {
+    .download-description {
       @include flex-column;
       gap: 1.5em 0;
       &__header {
@@ -160,7 +160,7 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
         text-align: center;
       }
     }
-    .download-header {
+    .download-description {
       &__header {
         font-size: 2rem;
       }
@@ -280,6 +280,14 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
       font-weight: $secondary-weight;
     }
   }
+  .download-description{
+    grid-column: 2/7;
+    grid-row: 1/1;
+  }
+  .download-actions{
+    grid-column: 2/7;
+    grid-row: 2/2;
+  }
 }
 @media (min-width: 992px) {
   .site-container {
@@ -287,10 +295,10 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
       grid-column: 7/7;
       transform: translateX(-50%);
     }
-    .header-description {
+    .header-description, .download-description {
       grid-column: 3/11;
     }
-    .header-buttons {
+    .header-buttons, .download-actions {
       flex-direction: row;
       grid-column: 3/11;
       justify-content: space-evenly;
@@ -343,13 +351,14 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
     .preview-workflow {
       grid-column: 4/10;
     }
+
   }
 }
 @media (min-width: 1350px) {
   .site-container {
-    .header-description {
+    .header-description, .download-description{
       &__content {
-        padding: 0 12em;
+        padding: 0 5em;
       }
     }
     .header-snipets {
@@ -390,6 +399,7 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
         width: 40ch;
       }
     }
+
   }
 }
 </style>

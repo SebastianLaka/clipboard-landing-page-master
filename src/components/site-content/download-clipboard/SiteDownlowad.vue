@@ -8,6 +8,19 @@
 @media (min-width: 375px){
     .download-section{
         @include flex-column-center;
+        gap: 4em 0;
     }
+}
+@media (min-width: 768px) {
+  .download-section {
+    @include grid-tablet;
+    grid-template-rows: repeat(2, 1fr);
+    background-image: url(../../../assets/images/bg-header-desktop.png);
+  }
+}
+@media (min-width: 992px) {
+  .download-section{
+    @include grid-12-col;
+  }
 }
 </style>
