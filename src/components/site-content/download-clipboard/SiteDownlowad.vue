@@ -15,7 +15,6 @@
   .download-section {
     @include grid-tablet;
     grid-template-rows: repeat(2, 1fr);
-    background-image: url(../../../assets/images/bg-header-desktop.png);
   }
 }
 @media (min-width: 992px) {
