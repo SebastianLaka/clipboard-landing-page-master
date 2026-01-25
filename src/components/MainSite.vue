@@ -141,6 +141,14 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       <template #footer-logo="{img, alt}">
         <img :src="img" :alt="alt">
       </template>
+      <template #footer-links="{linkName}">
+        <ul>
+          <li><a href="">{{ linkName }}</a></li>
+        </ul>
+      </template>
+      <template #footer-social-media="{img, alt}">
+        <img :src="img" :alt="alt">
+      </template>
     </SiteFooter>
   </main>
 </template>
