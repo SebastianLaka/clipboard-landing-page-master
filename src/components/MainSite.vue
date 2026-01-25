@@ -142,8 +142,8 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
         <img :src="img" :alt="alt">
       </template>
       <template #footer-links="{linkName}">
-        <ul>
-          <li><a href="">{{ linkName }}</a></li>
+        <ul class="links-list">
+          <li class="links-list__link"><a href="#" class="links-list--redirect">{{ linkName }}</a></li>
         </ul>
       </template>
       <template #footer-social-media="{img, alt}">
@@ -262,6 +262,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   .preview-workflow {
     @include flex-column-center;
     padding: 0 3.5em;
+  }
+  .links-list{
+    &--redirect{
+      text-decoration: none;
+    }
   }
 }
 @media (min-width: 768px) {
