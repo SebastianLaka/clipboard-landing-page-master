@@ -6,6 +6,7 @@ import SiteWorkflow from './site-content/workflow/SiteWorkflow.vue'
 import SitePartners from './site-content/partners/SitePartners.vue'
 import SiteButton from './site-content/SiteButton.vue'
 import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
+import SiteFooter from './site-content/footer/SiteFooter.vue'
 </script>
 <template>
   <main class="site-container">
@@ -136,6 +137,11 @@ import SiteDownlowad from './site-content/download-clipboard/SiteDownlowad.vue'
         </div>
       </template>
     </SiteDownlowad>
+    <SiteFooter>
+      <template #footer-logo="{img, alt}">
+        <img :src="img" :alt="alt">
+      </template>
+    </SiteFooter>
   </main>
 </template>
 <style lang="scss" scoped>
