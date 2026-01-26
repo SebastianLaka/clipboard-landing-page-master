@@ -119,7 +119,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     </SiteWorkflow>
     <SitePartners>
       <template #partners-list="{ img, alt }">
-          <img :src="img" :alt="alt" />
+        <img :src="img" :alt="alt" />
       </template>
     </SitePartners>
     <SiteDownlowad>
@@ -138,16 +138,16 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       </template>
     </SiteDownlowad>
     <SiteFooter>
-      <template #footer-logo="{img, alt}">
-        <img :src="img" :alt="alt">
+      <template #footer-logo="{ img, alt }">
+        <img :src="img" :alt="alt" class="site-footer__logo" />
       </template>
-      <template #footer-links="{linkName}">
-        <ul class="links-list">
-          <li class="links-list__link"><a href="#" class="links-list--redirect">{{ linkName }}</a></li>
-        </ul>
+      <template #footer-links="{ linkName }">
+        <li class="links-box__link">
+          <a href="#" class="links-box--redirect">{{ linkName }}</a>
+        </li>
       </template>
-      <template #footer-social-media="{img, alt}">
-        <img :src="img" :alt="alt">
+      <template #footer-social-media="{ img, alt }">
+        <img :src="img" :alt="alt" class="" />
       </template>
     </SiteFooter>
   </main>
@@ -263,9 +263,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     @include flex-column-center;
     padding: 0 3.5em;
   }
-  .links-list{
-    &--redirect{
-      text-decoration: none;
+  .site-footer {
+    .links-box {
+      &--redirect {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -299,11 +301,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       font-weight: $secondary-weight;
     }
   }
-  .download-description{
+  .download-description {
     grid-column: 2/7;
     grid-row: 1/1;
   }
-  .download-actions{
+  .download-actions {
     grid-column: 2/7;
     grid-row: 2/2;
   }
@@ -314,10 +316,12 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       grid-column: 7/7;
       transform: translateX(-50%);
     }
-    .header-description, .download-description {
+    .header-description,
+    .download-description {
       grid-column: 3/11;
     }
-    .header-buttons, .download-actions {
+    .header-buttons,
+    .download-actions {
       flex-direction: row;
       grid-column: 3/11;
       justify-content: space-evenly;
@@ -370,12 +374,12 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     .preview-workflow {
       grid-column: 4/10;
     }
-
   }
 }
 @media (min-width: 1350px) {
   .site-container {
-    .header-description, .download-description{
+    .header-description,
+    .download-description {
       &__content {
         padding: 0 5em;
       }
@@ -399,15 +403,15 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       gap: 0.6em 0;
       &__description {
         padding: 0 1em;
-        width: 40ch;
+        width: 30ch;
       }
     }
     .text-workflow {
       grid-column: 5/9;
       padding: 0 1em;
       &__description {
-        padding: 0 .5em;
-        width: 40ch;
+        padding: 0 0.5em;
+        width: 30ch;
       }
     }
     .preview-workflow {
@@ -415,10 +419,15 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       padding: 0 1em;
       &__description {
         padding: 0 1em;
-        width: 40ch;
+        width: 30ch;
       }
     }
-
+  }
+}
+@media (min-width: 1440px) {
+  .site-container {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 </style>

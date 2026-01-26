@@ -41,7 +41,7 @@ const footerMedias = [
     alt: 'Twitter icon in footer',
   },
   {
-    id: 1,
+    id: 3,
     img: instagramIcon,
     alt: 'Instagram icon in footer',
   },
@@ -50,7 +50,7 @@ const footerMedias = [
 <template>
   <footer class="site-footer">
     <slot name="footer-logo" v-bind="footerLogo"></slot>
-    <div class="links-box">
+    <ul class="links-box">
       <slot
         name="footer-links"
         v-for="footerLink in footerLinks"
@@ -58,7 +58,7 @@ const footerMedias = [
         :linkName="footerLink.linkName"
         v-bind="footerLink"
       />
-    </div>
+    </ul>
     <div class="social-media-box">
       <slot
         name="footer-social-media"
@@ -71,19 +71,38 @@ const footerMedias = [
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
-@media (min-width: 375px){
-    .site-footer{
-        @include flex-column-center;
-        gap: 2em 0;
-        .links-box{
-            @include flex-column-center;
-            gap: 1em 0;
-        }
-        .social-media-box{
-            display: flex;
-            flex-direction: row;
-            gap: 0 2em;
-        }
+@media (min-width: 375px) {
+  .site-footer {
+    @include flex-column-center;
+    gap: 2em 0;
+    .links-box {
+      @include flex-column-center;
+      gap: 1em 0;
     }
+    .social-media-box {
+      display: flex;
+      flex-direction: row;
+      gap: 0 2em;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .site-footer {
+    @include grid-12-col;
+    .links-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-auto-flow: column;
+      grid-column: 3/11;
+      flex-direction: unset;
+      justify-self: start;
+      gap: 1em 4.9em;
+    }
+    .social-media-box {
+      grid-column: 11/-1;
+      justify-self: end;
+    }
+  }
 }
 </style>
