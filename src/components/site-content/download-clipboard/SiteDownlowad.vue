@@ -13,13 +13,15 @@
 }
 @media (min-width: 768px) {
   .download-section {
-    @include grid-tablet;
-    grid-template-rows: repeat(2, 1fr);
+    @include section-grid(
+      $columns: 7,
+      $rows: 3,
+    );
   }
 }
 @media (min-width: 992px) {
   .download-section{
-    @include grid-12-col;
+    @include section-grid($columns: 12, $rows: 2);
   }
 }
 </style>
