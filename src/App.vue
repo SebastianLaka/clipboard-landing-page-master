@@ -7,4 +7,7 @@ import MainSite from './components/MainSite.vue'
 
 <style lang="scss">
 @use './assets/scss/reset.scss' as *;
+body{
+    overflow-x: hidden;
+}
 </style>

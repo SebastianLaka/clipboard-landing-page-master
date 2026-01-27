@@ -39,13 +39,12 @@ const workflowIcons = {
   .workflow-main {
     @include grid-12-col;
     place-items: center;
-     align-items: start;
+    align-items: start;
   }
 }
 @media (min-width: 1350px) {
   .workflow-main {
     gap: 4em;
-    
   }
 }
 </style>

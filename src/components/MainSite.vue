@@ -166,9 +166,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       @include flex-column;
       gap: 1.5em 0;
       &__header {
-        font-size: 3rem;
-        text-align: center;
-        font-weight: $secondary-weight;
+        @include header-title(
+          $font-size: 3rem,
+          $text-align: center,
+          $font-weight: $secondary-weight,
+        );
       }
       &__content {
         text-align: center;
@@ -213,9 +215,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     align-items: center;
     gap: 1.25em 0;
     &__header {
-      font-size: 2rem;
-      font-weight: $secondary-weight;
-      text-align: center;
+      @include header-title(
+          $font-size: 2rem,
+          $text-align: center,
+          $font-weight: $secondary-weight,
+        );
     }
     &__description {
       text-align: center;
@@ -228,9 +232,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     .feature-cloud,
     .feature-history {
       &__title {
-        font-size: 2rem;
-        font-weight: $secondary-weight;
-        text-align: center;
+       @include header-title(
+          $font-size: 2rem,
+          $text-align: center,
+          $font-weight: $secondary-weight,
+        );
       }
       &__about {
         text-align: center;
@@ -239,9 +245,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   }
   .clipboard-main {
     &__header {
-      font-size: 2rem;
-      font-weight: $secondary-weight;
-      text-align: center;
+      @include header-title(
+          $font-size: 2rem,
+          $text-align: center,
+          $font-weight: $secondary-weight,
+        );
     }
     &__description {
       text-align: center;
@@ -253,8 +261,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     grid-column: 3/11;
     gap: 0.5em 0;
     &__header {
-      font-size: 2rem;
-      font-weight: $secondary-weight;
+      @include header-title(
+          $font-size: 2rem,
+          $text-align: none,
+          $font-weight: $secondary-weight,
+        );
     }
   }
   .blacklist-workflow,
@@ -297,8 +308,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   .preview-workflow {
     gap: 1em;
     &__header {
-      font-size: 2rem;
-      font-weight: $secondary-weight;
+      @include header-title(
+          $font-size: 2rem,
+          $text-align: none,
+          $font-weight: $secondary-weight,
+        );
     }
   }
   .download-description {
@@ -324,8 +338,8 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     .download-actions {
       flex-direction: row;
       grid-column: 3/11;
-      justify-content: space-evenly;
-      gap: 0 1em;
+      justify-content: center;
+      gap: 0 1.25em;
     }
     .header-snipets {
       @include grid-12-col;
@@ -398,7 +412,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       }
     }
     .blacklist-workflow {
-      grid-column: 2/5;
+      grid-column: 1/4;
       padding: 0 1em;
       gap: 0.6em 0;
       &__description {
@@ -415,7 +429,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       }
     }
     .preview-workflow {
-      grid-column: 9/12;
+      grid-column: 10/-1;
       padding: 0 1em;
       &__description {
         padding: 0 1em;
