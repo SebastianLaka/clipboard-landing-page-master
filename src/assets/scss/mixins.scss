@@ -28,3 +28,8 @@
   border-top: $border-top;
   transition: background-color 0.3s ease-in-out;
 }
+@mixin section-grid($columns, $rows) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+}

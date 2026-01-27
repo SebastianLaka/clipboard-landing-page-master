@@ -26,14 +26,17 @@ const headerLogo = {
 }
 @media (min-width: 768px) {
   .header-site {
-    @include grid-tablet;
-    grid-template-rows: repeat(3, 1fr);
     background-image: url(../../../assets/images/bg-header-desktop.png);
+    @include section-grid(
+      $columns: 7,
+      $rows: 3,
+    );
+    align-items: center;
   }
 }
 @media (min-width: 992px) {
   .header-site {
-    @include grid-12-col;
+    @include section-grid($columns: 12, $rows: 2)
   }
 }
 </style>

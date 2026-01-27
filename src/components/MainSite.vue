@@ -284,21 +284,14 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
 }
 @media (min-width: 768px) {
   .header-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     grid-column: 4/5;
   }
   .header-description {
     grid-column: 2/7;
     grid-row: 2/2;
-    &__header {
-      grid-column: 3/7;
-    }
   }
   .header-buttons {
     grid-column: 2/7;
-    width: 100%;
   }
   .header-snipets {
     gap: 1.5em 0;
