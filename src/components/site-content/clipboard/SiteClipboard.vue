@@ -27,7 +27,7 @@ const clipboartImage = {
 }
 @media (min-width: 992px){
     .clipboard-section{
-        @include grid-12-col;
+        @include section-grid($columns: 12, $rows: 1);
         .clipboard-main{
             grid-column: 3/11;
             grid-row: 1/1;

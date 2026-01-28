@@ -335,7 +335,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       gap: 0 1.25em;
     }
     .header-snipets {
-      @include grid-12-col;
+      @include section-grid($columns: 2, $rows: 1);
       &__header {
         grid-column: 4/10;
       }

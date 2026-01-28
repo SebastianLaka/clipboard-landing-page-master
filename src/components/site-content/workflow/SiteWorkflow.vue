@@ -37,7 +37,7 @@ const workflowIcons = {
 }
 @media (min-width: 992px) {
   .workflow-main {
-    @include grid-12-col;
+    @include section-grid($columns: 12, $rows: 1);
     place-items: center;
     align-items: start;
   }

@@ -88,11 +88,9 @@ const footerMedias = [
 }
 @media (min-width: 992px) {
   .site-footer {
-    @include grid-12-col;
+    @include section-grid($columns: 12, $rows: 1);
     .links-box {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      @include section-grid($columns: 3, $rows: 2);
       grid-auto-flow: column;
       grid-column: 3/11;
       flex-direction: unset;

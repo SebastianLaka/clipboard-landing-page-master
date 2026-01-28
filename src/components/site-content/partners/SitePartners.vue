@@ -54,20 +54,15 @@ const partnersLogos = {
 }
 @media (min-width: 768px) {
   .partners-logos-main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    @include section-grid($columns: 3, $rows: 1);
     justify-items: center;
-  }
-}
-@media (min-width: 992px) {
-  .partners-logos-main {
-    grid-template-columns: repeat(3, 1fr);
     gap: 3em;
   }
 }
 @media (min-width: 1200px) {
   .partners-logos-main {
-    grid-template-columns: repeat(5, 1fr);
+    @include section-grid($columns: 5, $rows: 1);
   }
 }
 

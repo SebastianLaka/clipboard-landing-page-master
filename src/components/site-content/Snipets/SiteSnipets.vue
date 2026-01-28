@@ -34,8 +34,7 @@ const snipetImage = {
 @media (min-width: 992px) {
   .site-snipets {
     .snipets-content {
-      @include section-grid($columns: 12, $rows: auto);
-      align-content: center;
+      @include section-grid($columns: 12, $rows: 1);
       gap: 0 5em;
     }
   }
