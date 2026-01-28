@@ -8,14 +8,6 @@
   justify-content: center;
   align-items: center;
 }
-@mixin grid-tablet {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-@mixin grid-12-col {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
 @mixin header-title($font-weight, $text-align, $font-size ) {
   font-weight: $secondary-weight;
   text-align: $text-align;
