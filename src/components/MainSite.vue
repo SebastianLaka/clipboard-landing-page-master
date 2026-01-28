@@ -147,7 +147,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
         </li>
       </template>
       <template #footer-social-media="{ img, alt }">
-        <img :src="img" :alt="alt" class="" />
+        <img :src="img" :alt="alt" class="site-footer__icon" />
       </template>
     </SiteFooter>
   </main>
@@ -278,6 +278,16 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     .links-box {
       &--redirect {
         text-decoration: none;
+        transition: color .3s ease-in-out;
+        &:hover{
+          color: $green-500;
+        }
+      }
+    }
+    &__icon{
+      transition: filter .3s ease-in-out;
+      &:hover{
+        filter: invert(65%) sepia(21%) saturate(1478%) hue-rotate(129deg) brightness(95%) contrast(88%);
       }
     }
   }
