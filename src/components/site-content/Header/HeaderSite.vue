@@ -14,11 +14,13 @@ const headerLogo = {
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .header-site {
     @include flex-column-center;
     padding: 3em 1em 0 1em;
-    gap: 3em 0;
+    gap: map.get($site-gap, 'shared');
     background-image: url(../../../assets/images/bg-header-mobile.png);
     background-repeat: no-repeat;
     background-position: right top;

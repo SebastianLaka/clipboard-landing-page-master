@@ -46,18 +46,18 @@ const partnersLogos = {
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .partners-logos-main {
     @include flex-column-center;
-    gap: 3.25em 0;
+    gap: map.get($site-gap, 'shared');
   }
 }
 @media (min-width: 768px) {
   .partners-logos-main {
-
     @include section-grid($columns: 3, $rows: 1);
     justify-items: center;
-    gap: 3em;
   }
 }
 @media (min-width: 1200px) {

@@ -71,17 +71,18 @@ const footerMedias = [
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use 'sass:map';
 @media (min-width: 375px) {
   .site-footer {
     @include flex-column-center;
-    gap: 2em 0;
+    gap: map.get($site-gap, 'shared');
     .links-box {
       @include flex-column-center;
-      gap: 1em 0;
+      gap: map.get($site-gap, 'section-content');
     }
     .social-media-box {
       display: flex;
-      flex-direction: row;
       gap: 0 2em;
     }
   }
@@ -100,6 +101,16 @@ const footerMedias = [
     .social-media-box {
       grid-column: 11/-1;
       justify-self: end;
+    }
+  }
+}
+@media (min-width: 1350px) {
+  .site-footer {
+    .links-box {
+      @include section-grid($columns: 5, $rows: 1);
+      grid-auto-flow: row;
+      justify-self: center;
+  
     }
   }
 }

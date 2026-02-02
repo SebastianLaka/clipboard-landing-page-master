@@ -156,21 +156,23 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
 @use '../assets/scss/font' as *;
 @use '../assets/scss/colors' as *;
 @use '../assets//scss/mixins.scss' as *;
+@use '../assets//scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .site-container {
     @include flex-column;
     padding: 0 1em;
-    gap: 10em 0;
+    gap: map.get($site-gap, 'main');
     .header-description,
     .download-description {
       @include flex-column;
-      gap: 1.5em 0;
+      gap: map.get($site-gap, 'section-content');
       &__header {
         @include header-title(
           $font-size: 3rem,
           $text-align: center,
           $font-weight: $secondary-weight,
-        );
+        );   
       }
       &__content {
         text-align: center;
@@ -212,8 +214,8 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   }
   .header-snipets {
     @include flex-column;
+    gap: map.get($site-gap, 'section-content');
     align-items: center;
-    gap: 1.25em 0;
     &__header {
       @include header-title(
           $font-size: 2rem,
@@ -227,7 +229,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   }
   .snipets-features-main {
     @include flex-column;
-    gap: 2.5em 0;
+    gap: map.get($site-gap, 'shared');
     .feature-search,
     .feature-cloud,
     .feature-history {
@@ -250,6 +252,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
           $text-align: center,
           $font-weight: $secondary-weight,
         );
+       
     }
     &__description {
       text-align: center;
@@ -258,8 +261,8 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
   }
   .workflow-header-content {
     @include flex-column;
+    gap: map.get($site-gap, 'section-content');
     grid-column: 3/11;
-    gap: 0.5em 0;
     &__header {
       @include header-title(
           $font-size: 2rem,
@@ -286,6 +289,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     }
     &__icon{
       transition: filter .3s ease-in-out;
+      cursor: pointer;
       &:hover{
         filter: invert(65%) sepia(21%) saturate(1478%) hue-rotate(129deg) brightness(95%) contrast(88%);
       }

@@ -28,11 +28,13 @@ const workflowIcons = {
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .workflow-main {
     @include flex-column-center;
     text-align: center;
-    gap: 3em 0;
+    gap: map.get($site-gap, 'shared');
   }
 }
 @media (min-width: 992px) {

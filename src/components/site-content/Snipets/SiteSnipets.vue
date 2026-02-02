@@ -16,13 +16,15 @@ const snipetImage = {
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .site-snipets {
     @include flex-column-center;
-    gap: 3em 0;
+    gap: map.get($site-gap, 'shared');
     .snipets-content {
       @include flex-column;
-      gap: 3em 0;
+      gap: map.get($site-gap, 'shared');
     }
   }
 }

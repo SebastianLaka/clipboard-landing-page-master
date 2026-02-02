@@ -15,13 +15,15 @@ const clipboartImage = {
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px) {
   .clipboard-section {
     @include flex-column;
-    gap: 4em 0;
+    gap: map.get($site-gap,'shared');
     .clipboard-main{
         @include flex-column-center;
-        gap: 1em 0;
+        gap: map.get($site-gap, 'section-content');
     }
   }
 }

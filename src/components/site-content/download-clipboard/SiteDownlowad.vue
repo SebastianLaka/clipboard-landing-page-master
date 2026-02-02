@@ -5,10 +5,12 @@
 </template>
 <style lang="scss" scoped>
 @use '../../../assets/scss/mixins.scss' as *;
+@use '../../../assets/scss/maps.scss' as *;
+@use "sass:map";
 @media (min-width: 375px){
     .download-section{
         @include flex-column-center;
-        gap: 4em 0;
+       gap: map.get($site-gap, 'shared');
     }
 }
 @media (min-width: 768px) {
