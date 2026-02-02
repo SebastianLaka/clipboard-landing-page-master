@@ -4,16 +4,17 @@
   </section>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px){
+@media (min-width: $mobile){
     .download-section{
         @include flex-column-center;
        gap: map.get($site-gap, 'shared');
     }
 }
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .download-section {
     @include section-grid(
       $columns: 7,
@@ -21,7 +22,7 @@
     );
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .download-section{
     @include section-grid($columns: 12, $rows: 2);
   }

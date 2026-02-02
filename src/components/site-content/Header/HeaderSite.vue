@@ -13,10 +13,11 @@ const headerLogo = {
   </header>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .header-site {
     @include flex-column-center;
     padding: 3em 1em 0 1em;
@@ -26,7 +27,7 @@ const headerLogo = {
     background-position: right top;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .header-site {
     background-image: url(../../../assets/images/bg-header-desktop.png);
     @include section-grid(
@@ -36,7 +37,7 @@ const headerLogo = {
     align-items: center;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .header-site {
     @include section-grid($columns: 12, $rows: 2)
   }

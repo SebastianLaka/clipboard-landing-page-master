@@ -14,10 +14,11 @@ const clipboartImage = {
   </section>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .clipboard-section {
     @include flex-column;
     gap: map.get($site-gap,'shared');
@@ -27,7 +28,7 @@ const clipboartImage = {
     }
   }
 }
-@media (min-width: 992px){
+@media (min-width: $desktop-small){
     .clipboard-section{
         @include section-grid($columns: 12, $rows: 1);
         .clipboard-main{

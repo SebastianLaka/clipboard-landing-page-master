@@ -155,10 +155,11 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
 <style lang="scss" scoped>
 @use '../assets/scss/font' as *;
 @use '../assets/scss/colors' as *;
+@use '../assets/scss/breakpoints.scss' as *;
 @use '../assets//scss/mixins.scss' as *;
 @use '../assets//scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .site-container {
     @include flex-column;
     padding: 0 1em;
@@ -296,7 +297,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .header-logo {
     grid-column: 4/5;
   }
@@ -331,7 +332,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     grid-row: 2/2;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .site-container {
     .header-logo {
       grid-column: 7/7;
@@ -355,6 +356,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
       }
       &__description {
         grid-column: 3/11;
+        width: 75ch;
       }
     }
     .snipet-image {
@@ -397,7 +399,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     }
   }
 }
-@media (min-width: 1350px) {
+@media (min-width: $desktop-wide) {
   .site-container {
     .header-description,
     .download-description {
@@ -445,7 +447,7 @@ import SiteFooter from './site-content/footer/SiteFooter.vue'
     }
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: $desktop-wide) {
   .site-container {
     max-width: 1440px;
     margin: 0 auto;

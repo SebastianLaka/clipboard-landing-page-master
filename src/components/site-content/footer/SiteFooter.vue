@@ -70,10 +70,11 @@ const footerMedias = [
   </footer>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use 'sass:map';
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .site-footer {
     @include flex-column-center;
     gap: map.get($site-gap, 'shared');
@@ -87,7 +88,7 @@ const footerMedias = [
     }
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .site-footer {
     @include section-grid($columns: 12, $rows: 1);
     .links-box {
@@ -104,7 +105,7 @@ const footerMedias = [
     }
   }
 }
-@media (min-width: 1350px) {
+@media (min-width: $desktop-wide) {
   .site-footer {
     .links-box {
       @include section-grid($columns: 5, $rows: 1);

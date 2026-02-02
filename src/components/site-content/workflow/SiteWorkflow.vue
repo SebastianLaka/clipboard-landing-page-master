@@ -27,24 +27,25 @@ const workflowIcons = {
   </section>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .workflow-main {
     @include flex-column-center;
     text-align: center;
     gap: map.get($site-gap, 'shared');
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .workflow-main {
     @include section-grid($columns: 12, $rows: 1);
     place-items: center;
     align-items: start;
   }
 }
-@media (min-width: 1350px) {
+@media (min-width: $desktop-wide) {
   .workflow-main {
     gap: 4em;
   }

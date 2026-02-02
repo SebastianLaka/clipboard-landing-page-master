@@ -45,22 +45,23 @@ const partnersLogos = {
   </section>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .partners-logos-main {
     @include flex-column-center;
     gap: map.get($site-gap, 'shared');
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .partners-logos-main {
     @include section-grid($columns: 3, $rows: 1);
     justify-items: center;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $desktop-large) {
   .partners-logos-main {
     @include section-grid($columns: 5, $rows: 1);
   }

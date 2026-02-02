@@ -15,10 +15,11 @@ const snipetImage = {
   </section>
 </template>
 <style lang="scss" scoped>
+@use '../../../assets/scss/breakpoints.scss' as *;
 @use '../../../assets/scss/mixins.scss' as *;
 @use '../../../assets/scss/maps.scss' as *;
 @use "sass:map";
-@media (min-width: 375px) {
+@media (min-width: $mobile) {
   .site-snipets {
     @include flex-column-center;
     gap: map.get($site-gap, 'shared');
@@ -28,12 +29,12 @@ const snipetImage = {
     }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .site-snipets {
     gap: 5em 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $desktop-small) {
   .site-snipets {
     .snipets-content {
       @include section-grid($columns: 12, $rows: 1);
